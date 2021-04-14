@@ -1,4 +1,4 @@
---creation of tables
+-- creation of tables
 
 CREATE TABLE tricks (
 id INT PRIMARY KEY AUTO_INCREMENT,
@@ -12,7 +12,7 @@ id INT PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(100) NOT NULL
 );
 
---join table of the two previous tables
+-- join table of the two previous tables
 
 CREATE TABLE tricks_category (
 id INT PRIMARY KEY AUTO_INCREMENT,
@@ -23,7 +23,7 @@ FOREIGN KEY (category_id) REFERENCES category(id)
 );
 
 
---insert data in the corresponding tables
+-- insert data in the corresponding tables
 
 INSERT INTO category (name) VALUES ('ide'), ('os'), ('terminal'), ('git/github');
 
@@ -54,7 +54,7 @@ $ ./maj'),
 ('Basculer sur autre branche', 'git checkout <BRANCHNAME>'),
 ('Vérifier le contenu','git status'),
 ('faire un clone', 'git clone <URLFROMGITHUB>');
-;
+
 
 INSERT INTO tricks_category (tricks_id, category_id) VALUES
 (1, 3), (2, 3), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (9, 4), (10, 4), (11, 4), (12, 4);
