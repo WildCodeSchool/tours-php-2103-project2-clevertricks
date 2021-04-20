@@ -1,32 +1,47 @@
 {% extends 'layout.html.twig' %}
 
+{% block sidenav %}
+{% include 'Tricks/sidenav.html.twig' %}
+{% endblock %}
+
 {% block content %}
     
     <h1>Clevertricks</h1>
     <p>Trucs et Astuces pour Développeurs</p>
 
-    <label for="site-search"></label>
+    {#<label for="site-search"></label>
     <input type="search" id="site-search" name="q"
        placeholder="Rechercher sur le site…">
 
-    <button>Go!</button></br>
+    <button>Go!</button></br>#}
+    <section class="category">
+    <h2>Nos astuces par catégories</h2>
 
-    <h2>Catégories</h2>
+        <ul>
+            {% for category in categories %}
+                <li> 
+                    <a href="#">{{category.name}}</a> 
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
 
-    <button>OS</button>
-    <button>Terminal</button>
-    <button>IDE</button>
-    <button>Git/Github</button>
-
+    <section class="presentation">
     <h2>Que fait-on ici ?</h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+    <p>Et si on partageait nos astuces et nos trouvailles de programmation ?</br>
+    Ce site est un bloc-notes sur la programmation, le développement web en général.
+    Il recueille des trucs et astuces sur les langages de programmation web, raccourcis clavier, etc.
+    Nous espérons qu'il vous permettra de résoudre vos bugs et de découvrir de nouvelles techniques utiles.
+    Et n'oubliez pas de publier un article ! Si vous possédez des infos utiles, si vous êtes l'auteur de codes sources dont vous souhaitez faire bénéficier la communauté des développeurs web, n'hésitez pas ...</p>
+    </section>
     <h2>Les 5 dernières astuces parues</h2>
     <ul>
         <li>astuce 1</li>
         <li>astuce 2</li>
         <li>astuce 3</li>
+        <li>astuce 4</li>
+        <li>astuce 5</li>
     </ul>
 {% endblock %}
 
