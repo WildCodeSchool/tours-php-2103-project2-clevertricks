@@ -7,7 +7,7 @@
  * Time: 18:40
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace App\Controller;
 
@@ -27,8 +27,6 @@ class HomeController extends AbstractController
     {
         $categoryManager = new CategoryManager();
         $categories = $categoryManager->selectAll('name');
-        
         return $this->twig->render('Home/index.html.twig', ['categories' => $categories]);
     }
-
 }
