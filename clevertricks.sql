@@ -1,8 +1,8 @@
 -- 'tabula rasa' in database
 
+DROP TABLE IF EXISTS tricks_category;
 DROP TABLE IF EXISTS tricks;
 DROP TABLE IF EXISTS category;
-DROP TABLE IF EXISTS tricks_category;
 
 -- creation of tables
 
