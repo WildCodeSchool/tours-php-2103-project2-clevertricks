@@ -7,7 +7,12 @@
  * Time: 18:40
  */
 
+declare(strict_types=1);
+
 namespace App\Controller;
+
+use App\Model\CategoryManager;
+use App\Model\TricksManager;
 
 class HomeController extends AbstractController
 {
@@ -21,6 +26,13 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        $categoryManager = new CategoryManager();
+        $categories = $categoryManager->selectAll('name');
+        $tricksManager = new TricksManager();
+        $lastFiveTricks = $tricksManager->selectAll('id', 'DESC', '5');
+        return $this->twig->render(
+            'Home/index.html.twig',
+            ['categories' => $categories, 'lastFiveTricks' => $lastFiveTricks]
+        );
     }
 }
