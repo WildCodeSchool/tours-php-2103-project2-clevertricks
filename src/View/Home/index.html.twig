@@ -1,47 +1,35 @@
 {% extends 'layout.html.twig' %}
 
-{% block sidenav %}
-{% include 'Tricks/sidenav.html.twig' %}
-{% endblock %}
-
 {% block content %}
     
     <h1>Clevertricks</h1>
-    <p>Trucs et Astuces pour Développeurs</p>
+        <p>Trucs et Astuces pour Développeurs</p>
 
-    {#<label for="site-search"></label>
-    <input type="search" id="site-search" name="q"
-       placeholder="Rechercher sur le site…">
+        {#<label for="site-search"></label>
+        <input type="search" id="site-search" name="q"
+        placeholder="Rechercher sur le site…">
 
-    <button>Go!</button></br>#}
-    <section class="category">
-    <h2>Nos astuces par catégories</h2>
+        <button>Go!</button></br>#}
+        <section class="category">
+            <h2>Nos astuces par catégories</h2>
+                <ul>
+                    {% for category in categories %}
+                        <li> 
+                            <a href="#">{{category.name}}</a> 
+                        </li>
+                    {% endfor %}
+                </ul>
+        </section>
 
-        <ul>
-            {% for category in categories %}
-                <li> 
-                    <a href="#">{{category.name}}</a> 
-                </li>
-            {% endfor %}
-        </ul>
-    </section>
+        <section class="presentation">
+            <h2>Que fait-on ici ?</h2>
 
-    <section class="presentation">
-    <h2>Que fait-on ici ?</h2>
-
-    <p>Et si on partageait nos astuces et nos trouvailles de programmation ?</br>
-    Ce site est un bloc-notes sur la programmation, le développement web en général.
-    Il recueille des trucs et astuces sur les langages de programmation web, raccourcis clavier, etc.
-    Nous espérons qu'il vous permettra de résoudre vos bugs et de découvrir de nouvelles techniques utiles.
-    Et n'oubliez pas de publier un article ! Si vous possédez des infos utiles, si vous êtes l'auteur de codes sources dont vous souhaitez faire bénéficier la communauté des développeurs web, n'hésitez pas ...</p>
-    </section>
-    <h2>Les 5 dernières astuces parues</h2>
-    <ul>
-        <li>astuce 1</li>
-        <li>astuce 2</li>
-        <li>astuce 3</li>
-        <li>astuce 4</li>
-        <li>astuce 5</li>
-    </ul>
+            <p>Et si on partageait nos astuces et nos trouvailles de programmation ?</br>
+            Ce site est un bloc-notes sur la programmation, le développement web en général.
+            Il recueille des trucs et astuces sur les langages de programmation web, raccourcis clavier, etc.
+            Nous espérons qu'il vous permettra de résoudre vos bugs et de découvrir de nouvelles techniques utiles.
+            Et n'oubliez pas de publier un article ! Si vous possédez des infos utiles, si vous êtes l'auteur de codes sources dont vous souhaitez faire bénéficier la communauté des développeurs web, n'hésitez pas ...</p>
+        </section>
+    
 {% endblock %}
 

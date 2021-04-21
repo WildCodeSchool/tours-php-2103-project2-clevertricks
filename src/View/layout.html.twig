@@ -14,15 +14,15 @@
 
 <body>
     <header>
-        
-        {% block sidenav %}
+        {% block nav %}
+        {% include 'Home/nav.html.twig' %}
         {% endblock %}
     </header>
     {% block content %}{% endblock %}
     {% block javascript %}{% endblock %}
 </body>
+
+{# Ces codes javascript qui suivent sont temporaires, ils seront remanié puis ajouté dans un block javascript.#}
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <script src="/assets/javascript/scriptNav.js"></script>
 </html>
-
-
