@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: sylvain
@@ -6,9 +7,12 @@
  * Time: 20:52
  * PHP version 7
  */
+
 namespace App\Model;
+
 use App\Model\Connection;
 use PDO;
+
 /**
  * Abstract class handling default manager.
  */
@@ -21,6 +25,7 @@ abstract class AbstractManager
         $connection = new Connection();
         $this->pdo = $connection->getPdoConnection();
     }
+
     /**
      * Get all row from database.
      */
@@ -35,6 +40,7 @@ abstract class AbstractManager
 
         return $this->pdo->query($query)->fetchAll();
     }
+
     /**
      * Get one row from database by ID.
      *
@@ -45,8 +51,10 @@ abstract class AbstractManager
         $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
+
         return $statement->fetch();
     }
+
     /**
      * Delete row form an ID
      */
