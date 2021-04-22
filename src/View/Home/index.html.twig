@@ -5,11 +5,6 @@
     <h1>Clevertricks</h1>
         <p>Trucs et Astuces pour Développeurs</p>
 
-        {#<label for="site-search"></label>
-        <input type="search" id="site-search" name="q"
-        placeholder="Rechercher sur le site…">
-
-        <button>Go!</button></br>#}
         <section class="category">
             <h2>Nos astuces par catégories</h2>
                 <ul>
@@ -30,6 +25,16 @@
             Nous espérons qu'il vous permettra de résoudre vos bugs et de découvrir de nouvelles techniques utiles.
             Et n'oubliez pas de publier un article ! Si vous possédez des infos utiles, si vous êtes l'auteur de codes sources dont vous souhaitez faire bénéficier la communauté des développeurs web, n'hésitez pas ...</p>
         </section>
+
+        <section class="lastFiveTricks">
+            <h2>Nos 5 dernières astuces</h2>
+            <ul>
+                {% for trick in lastFiveTricks %}
+                    <li> 
+                        {{loop.index}} : <a href="#">{{trick.title}}</a> 
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
     
 {% endblock %}
-
