@@ -1,7 +1,6 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-<<<<<<< HEAD
     
     <h1>Clevertricks</h1>
         <p>Trucs et Astuces pour Développeurs</p>
@@ -38,33 +37,4 @@
             </ul>
         </section>
     
-=======
-
-    <h1>Hello Wilder !</h1>
-    <section class="presentation">
-        <h2>Que fait-on ici?</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui reprehenderit, ullam expedita, iste eum veritatis quidem labore soluta quia obcaecati, asperiores tempora exercitationem deleniti eius ducimus rem corrupti molestias laboriosam!</p>
-    </section>
-    <section class="category">
-        <h2>Nos astuces par catégories</h2>
-        <ul>
-            {% for category in categories %}
-                <li> 
-                    <a href="#">{{category.name}}</a> 
-                </li>
-            {% endfor %}
-        </ul>
-    </section>
-    <section class="lastFiveTricks">
-        <h2>Nos 5 dernières astuces</h2>
-        <ul>
-            {% for trick in lastFiveTricks %}
-                <li> 
-                    {{loop.index}} : <a href="#">{{trick.title}}</a> 
-                </li>
-            {% endfor %}
-        </ul>
-    </section>
-
->>>>>>> a4b244fdc49da0c9547e9edfbce95ccfa7dbe42c
 {% endblock %}
