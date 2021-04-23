@@ -18,14 +18,6 @@ use PDO;
  */
 abstract class MyAbstractManager extends AbstractManager
 {
-    protected PDO $pdo;
-    public const TABLE = '';
-    public function __construct()
-    {
-        $connection = new Connection();
-        $this->pdo = $connection->getPdoConnection();
-    }
-
     /**
      * Get all row from database.
      */
