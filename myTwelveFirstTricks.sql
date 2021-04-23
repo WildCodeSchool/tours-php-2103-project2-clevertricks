@@ -9,16 +9,6 @@ INSERT INTO `category` VALUES (1,'ide'),(2,'os'),(3,'terminal'),(4,'git/github')
 UNLOCK TABLES;
 
 --
--- Dumping data for table `item`
---
-
-LOCK TABLES `item` WRITE;
-/*!40000 ALTER TABLE `item` DISABLE KEYS */;
-INSERT INTO `item` VALUES (1,'Stuff'),(2,'Doodads !'),(3,'cédric');
-/*!40000 ALTER TABLE `item` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Dumping data for table `tricks`
 --
 
