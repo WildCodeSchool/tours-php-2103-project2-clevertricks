@@ -13,6 +13,7 @@ namespace App\Controller;
 
 use App\Model\CategoryManager;
 use App\Model\TricksManager;
+use App\Model\TricksCategManager;
 
 class HomeController extends AbstractController
 {
@@ -28,8 +29,8 @@ class HomeController extends AbstractController
     {
         $categoryManager = new CategoryManager();
         $categories = $categoryManager->selectAll('name');
-        $tricksManager = new TricksManager();
-        $lastFiveTricks = $tricksManager->selectAll('id', 'DESC', '5');
+        $tricksCategManager = new TricksCategManager();
+        $lastFiveTricks = $tricksCategManager->selectJoin('tricks_id', 'DESC', '5');
         return $this->twig->render(
             'Home/index.html.twig',
             ['categories' => $categories, 'lastFiveTricks' => $lastFiveTricks]
