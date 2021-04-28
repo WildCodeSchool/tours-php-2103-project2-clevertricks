@@ -29,7 +29,7 @@ class HomeController extends AbstractController
         $categoryManager = new CategoryManager();
         $categories = $categoryManager->selectAll('name');
         $tricksManager = new TricksManager();
-        $lastFiveTricks = $tricksManager->selectAll('id', 'DESC', '5');
+        $lastFiveTricks = $tricksManager->selectJoin('tricks_id', 'DESC', '5');
         return $this->twig->render(
             'Home/index.html.twig',
             ['categories' => $categories, 'lastFiveTricks' => $lastFiveTricks]
