@@ -4,7 +4,7 @@
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'ide'),(2,'os'),(3,'terminal'),(4,'git/github');
+INSERT INTO `category` VALUES (1,'ide'),(2,'os'),(3,'terminal'),(4,'git_github');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
