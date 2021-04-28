@@ -14,7 +14,6 @@ namespace App\Controller;
 use App\Model\CategoryManager;
 use App\Model\TricksManager;
 
-
 class HomeController extends AbstractController
 {
     /**
