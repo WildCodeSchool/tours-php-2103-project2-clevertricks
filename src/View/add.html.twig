@@ -1,0 +1,12 @@
+<form method="post">
+    <select name="nouvelle categorie">
+        {% for category in categories %}
+            <li> 
+                <a href="#">{{category.name}}</a> 
+             </li>
+        {% endfor %}
+    </select>
+    <label for="message">Decriver votre astuce:</label>
+    <textarea id="message" name="nouvelle astuce"></textarea>
+    <button type="submit" value="Valider">Soumettre votre astuce</button>
+</form>
