@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Model\CategoryManager;
 use App\Model\TricksManager;
 
 class HomeController extends MyAbstractController
