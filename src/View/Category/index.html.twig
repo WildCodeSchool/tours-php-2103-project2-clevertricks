@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<section class="tricksByCategory">
+    <h2>Nos astuces dans la catégorie  </h2>
+        <ul>
+            {% for trick in tricksByCategory %}
+                <li> 
+                    <a href="#">{{trick.title}}</a> 
+                </li>
+            {% endfor %}
+        </ul>
+</section>
+{% endblock %}

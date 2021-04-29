@@ -20,4 +20,23 @@ class TricksManager extends MyAbstractManager
 
         return $this->pdo->query($query)->fetchAll();
     }
+
+     /**
+     * Get all tricks from a category.
+     */
+    public function selectTricksByCategory(string $category): array
+    {
+        $query = 'SELECT title
+        FROM tricks_category tc 
+        JOIN tricks t ON t.id = tc.tricks_id 
+        JOIN category c ON c.id = category_id 
+        WHERE name = :category ORDER BY title ASC';
+
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':category', $category, \PDO::PARAM_STR);
+
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
 }
