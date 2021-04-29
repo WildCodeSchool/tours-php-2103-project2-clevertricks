@@ -11,7 +11,7 @@ class TricksManager extends MyAbstractManager
     /**
      * Get all tricks from a category.
      */
-    public function selectTricksByCategory(string $category):array
+    public function selectTricksByCategory(string $category): array
     {
         $query = 'SELECT title
         FROM tricks_category tc 
