@@ -11,10 +11,9 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Model\CategoryManager;
 use App\Model\TricksManager;
 
-class HomeController extends AbstractController
+class HomeController extends MyAbstractController
 {
     /**
      * Display home page
@@ -26,13 +25,11 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        $categoryManager = new CategoryManager();
-        $categories = $categoryManager->selectAll('name');
         $tricksManager = new TricksManager();
         $lastFiveTricks = $tricksManager->selectJoin('tricks_id', 'DESC', '5');
         return $this->twig->render(
             'Home/index.html.twig',
-            ['categories' => $categories, 'lastFiveTricks' => $lastFiveTricks]
+            ['lastFiveTricks' => $lastFiveTricks]
         );
     }
 }
