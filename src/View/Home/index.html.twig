@@ -2,22 +2,22 @@
 
 {% block content %}
     
-    <h1>Clevertricks</h1>
-        <p>Trucs et Astuces pour Développeurs</p>
+    <h1>Clever<img class="idea" src="assets/images/idea.png">tricks</h1>
+        <h2>Trucs et Astuces pour Développeurs</h2>
 
         <section class="category">
-            <h2>Nos astuces par catégories</h2>
-                <ul>
+            <h3>Nos astuces par catégories</h3>
+                
                     {% for category in categories %}
-                        <li> 
-                            <a href="/category/index/{{category.name}}">{{category.name}}</a> 
-                        </li>
+                        
+                            <button class="button" style="vertical-align:middle"><a href="/category/index/{{category.name}}"><span>{{category.name}}</span></a></button> 
+                        
                     {% endfor %}
-                </ul>
+                
         </section>
 
         <section class="presentation">
-            <h2>Que fait-on ici ?</h2>
+            <h3>Que fait-on ici ?</h3>
 
             <p>Et si on partageait nos astuces et nos trouvailles de programmation ?</br>
             Ce site est un bloc-notes sur la programmation, le développement web en général.
@@ -27,7 +27,7 @@
         </section>
 
         <section class="lastFiveTricks">
-            <h2>Nos 5 dernières astuces</h2>
+            <h3>Nos 5 dernières astuces</h3>
             <ul>
                 {% for trick in lastFiveTricks %}
                     <li> 
