@@ -52,3 +52,57 @@ body {
     right: 35px;
     }
   }
+  .hommeordi {
+    max-width: 100%;
+  }
+  .idea {
+    width: 80px;
+  }
+  h1 {
+    color: #31968e;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+  .button {
+    display: inline-block;
+    border-radius: 8px;
+    background-color: #349cd8;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  .category {
+    text-align: center;
+  }
+  
