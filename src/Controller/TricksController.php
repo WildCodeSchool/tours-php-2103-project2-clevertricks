@@ -19,8 +19,8 @@ class TricksController extends AbstractController
 
             // if validation is ok, insert and redirection
             $tricksManager = new TricksManager();
-            $id = $tricksManager->insert($tricks);
-            header('Location: /' . $id);
+            $tricksManager->insert($tricks);
+            header('Location: /');
         }
         $categoryManager = new CategoryManager();
         return $this->twig->render('Tricks/add.html.twig', ['categories' => $categoryManager->selectAll()]);
