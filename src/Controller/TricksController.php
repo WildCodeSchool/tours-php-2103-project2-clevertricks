@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
+use App\Model\CategoryManager;
 use App\Model\TricksManager;
 
-class tricksController extends AbstractController
+class TricksController extends AbstractController
 {
     /**
      * Add a new item
@@ -14,15 +15,15 @@ class tricksController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $tricks = array_map('trim', $_POST);
-
+            
             // TODO validations (length, format...)
 
             // if validation is ok, insert and redirection
             $tricksManager = new TricksManager();
             $id = $tricksManager->insert($tricks);
-            header('Location:/tricks/add/' . $id);
+            header('Location: /');
         }
-
-        return $this->twig->render('Tricks/add.html.twig');
+        $categoryManager = new CategoryManager();
+        return $this->twig->render('Tricks/add.html.twig', ['categories' => $categoryManager->selectAll()]);
     }
 }

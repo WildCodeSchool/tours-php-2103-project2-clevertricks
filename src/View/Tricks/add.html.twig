@@ -1,0 +1,12 @@
+<form method="post">
+        {% for category in categories %}
+        <input type="checkbox" id="category{{category.id}}" value="{{category.id}}">
+        <label for="category{{category.id}}">{{category.name}}</label>
+        {% endfor %}
+  
+    <label for="title">titre:</label>
+    <input type="text" id="title" name="title"></input>
+    <label for="message">Decriver votre astuce:</label>
+    <textarea id="message" name="content"></textarea>
+    <button type="submit" value="Valider">Soumettre votre astuce</button>
+</form>
