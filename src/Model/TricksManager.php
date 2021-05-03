@@ -10,7 +10,8 @@ class TricksManager extends MyAbstractManager
 
     public function insert(array $tricks): int
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`title`, `content`) VALUES (:title, :content)");
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
+         " (`title`, `content`) VALUES (:title, :content)");
         $statement->bindValue(':title', $tricks['title'], \PDO::PARAM_STR);
         $statement->bindValue(':content', $tricks['content'], \PDO::PARAM_STR);
 
