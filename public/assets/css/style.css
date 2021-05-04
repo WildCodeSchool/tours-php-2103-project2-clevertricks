@@ -1,21 +1,38 @@
-body {
-    font-family: "Gill Sans",'Lato', sans-serif;
+  body {
+      font-family: "Gill Sans",'Lato', sans-serif;
+    }
+/*------effets sur les liens du site------*/
+  a {
+      text-decoration: none;
+      color:  #2a1549;
+    }
+  a:hover {
+    color: black;
   }
-
-@media screen and (min-width: 800px) {
-  /* barre nav */
-  #menu {
-    width: 50px;
-    display: none;
-  }
-}
-@media screen and (max-width: 800px) {
   #home {
-    display: none;
-    color:  #2a1549;
+    color:#2a1549;
+    font-size: 1.5em;
   }
-
-}
+/*-------le menu rideau nav disparait et la section presentation ne prend que moitié de l'écran au-dela de 800px-----*/
+  @media screen and (min-width: 800px) {
+    /* barre nav */
+    #menu {
+      width: 50px;
+      display: none;
+    }
+    .presentation {
+      width: 50%;
+    }
+  }
+/*-------un lien vers l'accueil apparait dès que le menu burger disparait au-dela de 800px------*/
+  @media screen and (max-width: 800px) {
+    #home {
+      text-decoration: none;
+      display: none;
+      color:  #2a1549;
+    }
+/*--------style du menu rideau nav-----------------------*/
+  }
   .overlay {
     height: 0%;
     width: 100%;
@@ -57,8 +74,9 @@ body {
     font-size: 60px;
   }
 
+/*--------------------------------------------------------*/
 
-  .hommeordi {
+  .teteOrdi {
     max-width: 100%;
   }
 
@@ -122,7 +140,7 @@ body {
   .category {
     text-align: center;
   }
-  
+/*----------animation de l'ampoule------------------*/
   @-moz-keyframes spin {
     100% { -moz-transform: rotate(-360deg); }
   }
@@ -138,6 +156,7 @@ body {
     -moz-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite;
   }
+/*---------------------------------------------------*/
   .presentation, .tricksByCategory {
     border-radius: 10px;
     background-color: rgb(143, 214, 238);
@@ -148,11 +167,20 @@ body {
     background-color: rgb(212, 193, 240);
     padding: 1rem;
   }
+
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .flex-container section {
+    flex: 1 1 40%;
+    margin: 1rem;
+  }
  
   #myNav {
     color: white;
   }
-    
+/*-----------apparence du bouton TOP-------------*/
   #myBtn {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
@@ -171,5 +199,5 @@ body {
   #myBtn:hover {
     background-color: #555; /* Add a dark-grey background on hover */
   }
-
+/*-------------------------------------------------*/
   

@@ -11,28 +11,32 @@
                             <button class="button" style="vertical-align:middle"><a href="/category/index/{{category.name}}"><span>{{category.name}}</span></a></button> 
                         
                     {% endfor %}
-                
+
+        
         </section>
 
-        <section class="presentation">
-            <h3>Que fait-on ici ?</h3>
+        <main class="flex-container">
 
-            <p>Et si on partageait nos astuces et nos trouvailles de programmation ?</br>
-            Ce site est un bloc-notes sur la programmation, le développement web en général.
-            Il recueille des trucs et astuces sur les langages de programmation web, raccourcis clavier, etc.
-            Nous espérons qu'il vous permettra de résoudre vos bugs et de découvrir de nouvelles techniques utiles.
-            Et n'oubliez pas de publier un article ! Si vous possédez des infos utiles, si vous êtes l'auteur de codes sources dont vous souhaitez faire bénéficier la communauté des développeurs web, n'hésitez pas ...</p>
-        </section>
+            <section class="presentation">
+                <h3>Que fait-on ici ?</h3>
 
-        <section class="lastFiveTricks">
-            <h3>Nos 5 dernières astuces</h3>
-            <ul>
-                {% for trick in lastFiveTricks %}
-                    <li> 
-                        {{loop.index}} : <a href="#">{{trick.title}} ==> {{trick.name}}</a> 
-                    </li>
-                {% endfor %}
-            </ul>
-        </section>
+                <p>Et si on partageait nos astuces et nos trouvailles de programmation ?</br>
+                Ce site est un bloc-notes sur la programmation, le développement web en général.
+                Il recueille des trucs et astuces sur les langages de programmation web, raccourcis clavier, etc.
+                Nous espérons qu'il vous permettra de résoudre vos bugs et de découvrir de nouvelles techniques utiles.
+                Et n'oubliez pas de publier un article ! Si vous possédez des infos utiles, si vous êtes l'auteur de codes sources dont vous souhaitez faire bénéficier la communauté des développeurs web, n'hésitez pas ...</p>
+            </section>
+
+            <section class="lastFiveTricks">
+                <h3>Nos 5 dernières astuces</h3>
+                <ul>
+                    {% for trick in lastFiveTricks %}
+                        <li> 
+                            {{loop.index}} : <a href="#">{{trick.title}} ==> {{trick.name}}</a> 
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </main>
     
 {% endblock %}
