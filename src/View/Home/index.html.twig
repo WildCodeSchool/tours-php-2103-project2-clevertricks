@@ -10,7 +10,7 @@
                 <ul>
                     {% for category in categories %}
                         <li> 
-                            <a href="#">{{category.name}}</a> 
+                            <a href="/category/index/{{category.name}}">{{category.name}}</a> 
                         </li>
                     {% endfor %}
                 </ul>
@@ -32,7 +32,7 @@
             <ul>
                 {% for trick in lastFiveTricks %}
                     <li> 
-                        {{loop.index}} : <a href="#">{{trick.title}}</a> 
+                        {{loop.index}} : <a href="#">{{trick.title}} ==> {{trick.name}}</a> 
                     </li>
                 {% endfor %}
             </ul>
