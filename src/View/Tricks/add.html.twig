@@ -1,6 +1,6 @@
 <form method="post">
         {% for category in categories %}
-        <input type="checkbox" id="category{{category.id}}" value="{{category.id}}">
+        <input type="checkbox" id="category{{category.id}}" name="category_id[]" value="{{category.id}}">
         <label for="category{{category.id}}">{{category.name}}</label>
         {% endfor %}
   

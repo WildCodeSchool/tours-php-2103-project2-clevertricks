@@ -10,23 +10,26 @@ class TricksManager extends MyAbstractManager
 
     public function insert(array $tricks): int
     {
+        // preparing insert one trick into tricks
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
          " (`title`, `content`) VALUES (:title, :content)");
         $statement->bindValue(':title', $tricks['title'], \PDO::PARAM_STR);
         $statement->bindValue(':content', $tricks['content'], \PDO::PARAM_STR);
-
+        //inserting trick into tricks
         $statement->execute();
-        return (int)$this->pdo->lastInsertId();
+        //get the inserted tricks id
+        $tricksId = (int)$this->pdo->lastInsertId();
+        //adding categories to this trick
+        $statement = $this->pdo->prepare("INSERT INTO tricks_category (`tricks_id`,`category_id`) 
+        VALUES (:tricks_id, :category_id)");
+        $statement->bindValue(':tricks_id', $tricksId, \PDO::PARAM_INT);
+        foreach ($tricks['category_id'] as $categoryId) {
+            $statement->bindValue(':category_id', $categoryId, \PDO::PARAM_INT);
+            $statement->execute();
+        }
+        return $tricksId;
     }
 
-    public function insertCategory(array $category): int
-    {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`) VALUES (:name)");
-        $statement->bindValue('name', $category['name'], \PDO::PARAM_STR);
-
-        $statement->execute();
-        return (int)$this->pdo->lastInsertId();
-    }
 
     public function update(array $tricks): bool
     {
