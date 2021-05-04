@@ -14,7 +14,11 @@
 
 <body>
     <header>
-        <div><img class="hommeordi" src="assets/images/hommeordi.jpg"></div>
+        <div><img class="hommeordi" src="/assets/images/hommeordi.jpg"></div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img id="menu" src="/assets/images/menu(2).png"></span>
+        <h1>Clever<img class="idea" src="/assets/images/idea.png">tricks</h1>
+        <h2>Trucs et Astuces pour Développeurs</h2>
+
     {% block nav %}
         <nav id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -30,7 +34,7 @@
         </div>
         </nav>
 
-        <span class="burger" style="font-size:30px;cursor:pointer" onclick="openNav()"><img src="assets/images/menu(2).png"></span>
+        
     {% endblock %}
     </header>
     {% block content %}{% endblock %}

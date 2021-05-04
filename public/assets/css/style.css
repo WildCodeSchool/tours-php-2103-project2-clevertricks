@@ -1,7 +1,21 @@
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: "Gill Sans",'Lato', sans-serif;
   }
-  
+
+@media screen and (min-width: 800px) {
+  /* barre nav */
+  #menu {
+    width: 50px;
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  #home {
+    display: none;
+    color:  #2a1549;
+  }
+
+}
   .overlay {
     height: 0%;
     width: 100%;
@@ -42,16 +56,8 @@ body {
     right: 45px;
     font-size: 60px;
   }
-  
-  @media screen and (max-height: 450px) {
-    .overlay {overflow-y: auto;}
-    .overlay a {font-size: 20px}
-    .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-    }
-  }
+
+
   .hommeordi {
     max-width: 100%;
   }
@@ -69,6 +75,7 @@ body {
   }
   h3 {
     color:  #2a1549;
+    text-align: center;
   }
   p {
     font-size: 1em;;
@@ -131,22 +138,19 @@ body {
     -moz-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite;
   }
-  .presentation {
+  .presentation, .tricksByCategory {
     border-radius: 10px;
     background-color: rgb(143, 214, 238);
     padding: 1rem;
   }
-  .lastFiveTricks {
+  .lastFiveTricks, .category {
     border-radius: 10px;
     background-color: rgb(212, 193, 240);
     padding: 1rem;
-  }#myNav {
-    color: white;
   }
-  .category {
-    border-radius: 10px;
-    background-color: rgb(212, 193, 240);
-    padding: 1rem;
+ 
+  #myNav {
+    color: white;
   }
     
   #myBtn {
@@ -167,7 +171,5 @@ body {
   #myBtn:hover {
     background-color: #555; /* Add a dark-grey background on hover */
   }
-  .burger {
-    width: 50px;
-  }
+
   
