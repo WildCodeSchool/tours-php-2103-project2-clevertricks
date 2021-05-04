@@ -77,7 +77,8 @@
 /*--------------------------------------------------------*/
 
   .teteOrdi {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
   }
 
   h1 {
@@ -166,6 +167,9 @@
     border-radius: 10px;
     background-color: rgb(212, 193, 240);
     padding: 1rem;
+  }
+  .category {
+    margin: 1rem;
   }
 
   .flex-container {
