@@ -1,4 +1,10 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
 <form method="post">
+        {% for error in errors %}
+        <p>{{error}}</p>
+        {% endfor %}
         {% for category in categories %}
         <input type="checkbox" id="category{{category.id}}" name="category_id[]" value="{{category.id}}">
         <label for="category{{category.id}}">{{category.name}}</label>
@@ -10,3 +16,4 @@
     <textarea id="message" name="content"></textarea>
     <button type="submit" value="Valider">Soumettre votre astuce</button>
 </form>
+{% endblock %}
