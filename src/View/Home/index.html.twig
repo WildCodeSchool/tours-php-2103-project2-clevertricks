@@ -2,39 +2,42 @@
 
 {% block content %}
     
-    <h1>Clevertricks</h1>
-        <p>Trucs et Astuces pour Développeurs</p>
-
+    
         <section class="category">
-            <h2>Nos astuces par catégories</h2>
-                <ul>
+            <h3>Nos astuces par catégories</h3>
+                
                     {% for category in categories %}
+                        
+                            <button class="button" style="vertical-align:middle"><a href="/category/index/{{category.name}}"><span>{{category.name}}</span></a></button> 
+                        
+                    {% endfor %}
+
+                <a href="/tricks/add">Ajouter une astuce</a>
+
+        </section>
+
+        <main class="flex-container">
+
+            <section class="presentation">
+                <h3>Que fait-on ici ?</h3>
+
+                <p>Et si on partageait nos astuces et nos trouvailles de programmation ?</br>
+                Ce site est un bloc-notes sur la programmation, le développement web en général.
+                Il recueille des trucs et astuces sur les langages de programmation web, raccourcis clavier, etc.
+                Nous espérons qu'il vous permettra de résoudre vos bugs et de découvrir de nouvelles techniques utiles.
+                Et n'oubliez pas de publier un article ! Si vous possédez des infos utiles, si vous êtes l'auteur de codes sources dont vous souhaitez faire bénéficier la communauté des développeurs web, n'hésitez pas ...</p>
+            </section>
+
+            <section class="lastFiveTricks">
+                <h3>Nos 5 dernières astuces</h3>
+                <ul>
+                    {% for trick in lastFiveTricks %}
                         <li> 
-                            <a href="/category/index/{{category.name}}">{{category.name}}</a> 
+                            {{loop.index}} : <a href="#">{{trick.title}} ==> {{trick.name}}</a> 
                         </li>
                     {% endfor %}
                 </ul>
-        </section>
-
-        <section class="presentation">
-            <h2>Que fait-on ici ?</h2>
-
-            <p>Et si on partageait nos astuces et nos trouvailles de programmation ?</br>
-            Ce site est un bloc-notes sur la programmation, le développement web en général.
-            Il recueille des trucs et astuces sur les langages de programmation web, raccourcis clavier, etc.
-            Nous espérons qu'il vous permettra de résoudre vos bugs et de découvrir de nouvelles techniques utiles.
-            Et n'oubliez pas de publier un article ! Si vous possédez des infos utiles, si vous êtes l'auteur de codes sources dont vous souhaitez faire bénéficier la communauté des développeurs web, n'hésitez pas ...</p>
-        </section>
-
-        <section class="lastFiveTricks">
-            <h2>Nos 5 dernières astuces</h2>
-            <ul>
-                {% for trick in lastFiveTricks %}
-                    <li> 
-                        {{loop.index}} : <a href="#">{{trick.title}} ==> {{trick.name}}</a> 
-                    </li>
-                {% endfor %}
-            </ul>
-        </section>
+            </section>
+        </main>
     
 {% endblock %}

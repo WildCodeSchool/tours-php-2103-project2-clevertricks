@@ -14,6 +14,11 @@
 
 <body>
     <header>
+        <div><img class="teteOrdi" src="/assets/images/teteOrdi.png"></div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img id="menu" src="/assets/images/menu(2).png"></span>
+        <h1>Clever<a href="/"><img class="idea" src="/assets/images/idea.png"></a>tricks</h1>
+        <h2>Trucs et Astuces pour Développeurs</h2>
+
     {% block nav %}
         <nav id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -29,14 +34,14 @@
         </div>
         </nav>
 
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        
     {% endblock %}
     </header>
     {% block content %}{% endblock %}
     {% block javascript %}{% endblock %}
-</body>
-
-{# These javascript codes which follow are temporary, they will be reworked then added in a javascript block.#}
+    {# These javascript codes which follow are temporary, they will be reworked then added in a javascript block.#}
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <script src="/assets/javascript/scriptNav.js"></script>
+</body>
+
 </html>
