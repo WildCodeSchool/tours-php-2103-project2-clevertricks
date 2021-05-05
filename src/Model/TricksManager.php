@@ -31,14 +31,6 @@ class TricksManager extends MyAbstractManager
     }
 
 
-    public function update(array $tricks): bool
-    {
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `title` = :title WHERE id=:id");
-        $statement->bindValue('id', $tricks['id'], \PDO::PARAM_INT);
-        $statement->bindValue('title', $tricks['title'], \PDO::PARAM_STR);
-
-        return $statement->execute();
-    }
     public function selectJoin(string $orderBy = '', string $direction = 'ASC', string $limit = ''): array
     {
         $query = 'SELECT title, name FROM tricks_category tc JOIN tricks t ON t.id = tc.tricks_id 
@@ -57,7 +49,7 @@ class TricksManager extends MyAbstractManager
      */
     public function selectTricksByCategory(string $category): array
     {
-        $query = 'SELECT title
+        $query = 'SELECT *
         FROM tricks_category tc 
         JOIN tricks t ON t.id = tc.tricks_id 
         JOIN category c ON c.id = category_id 
