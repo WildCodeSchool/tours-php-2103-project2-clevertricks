@@ -26,7 +26,7 @@ class TricksManager extends MyAbstractManager
      */
     public function selectTricksByCategory(string $category): array
     {
-        $query = 'SELECT title
+        $query = 'SELECT *
         FROM tricks_category tc 
         JOIN tricks t ON t.id = tc.tricks_id 
         JOIN category c ON c.id = category_id 
