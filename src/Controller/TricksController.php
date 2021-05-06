@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Model\CategoryManager;
 use App\Model\TricksManager;
 
 class TricksController extends MyAbstractController
@@ -44,5 +43,16 @@ class TricksController extends MyAbstractController
             }
         }
         return $this->twig->render('Tricks/add.html.twig', ['errors' => $errors]);
+    }
+
+    /**
+     * Show informations for a specific trick
+     */
+    public function show(int $id): string
+    {
+        $tricksManager = new TricksManager();
+        $trick = $tricksManager->selectOneById($id);
+
+        return $this->twig->render('Tricks/show.html.twig', ['trick' => $trick]);
     }
 }

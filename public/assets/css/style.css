@@ -190,6 +190,12 @@
     margin: 1rem;
     text-align: center;
   }
+  .content {
+    border-radius: 10px;
+    background-color: rgb(212, 193, 240);
+    padding: 1rem;
+    color:rgba(2, 68, 90, 0.9)
+  }
 
   .flex-container {
     display: flex;
