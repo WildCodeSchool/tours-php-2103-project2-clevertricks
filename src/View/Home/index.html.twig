@@ -8,13 +8,16 @@
                 
                     {% for category in categories %}
                         
-                            <button class="button" style="vertical-align:middle"><a href="/category/index/{{category.name}}"><span>{{category.name}}</span></a></button> 
+                            <a class="button" href="/category/index/{{category.name}}" style="vertical-align:middle">
+                                <span>{{category.name}}</span>
+                            </a> 
                         
                     {% endfor %}
 
-                <a href="/tricks/add">Ajouter une astuce</a>
-
+                    
         </section>
+
+                <a href="/tricks/add">Ajouter une astuce</a>
 
         <main class="flex-container">
 
