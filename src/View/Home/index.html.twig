@@ -33,7 +33,7 @@
                 <ul>
                     {% for trick in lastFiveTricks %}
                         <li> 
-                            {{loop.index}} : <a href="#">{{trick.title}} ==> {{trick.name}}</a> 
+                            {{loop.index}} : <a href="/tricks/show/{{trick.tricks_id}}">{{trick.title}}</a>  ==> <a href="/category/index/{{trick.name}}">{{trick.name}}</a> 
                         </li>
                     {% endfor %}
                 </ul>
