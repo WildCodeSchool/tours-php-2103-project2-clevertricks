@@ -186,6 +186,11 @@
     background-color: rgb(212, 193, 240);
     padding: 1rem;
   }
+  .lastFiveCategory:hover {
+    color: indianred;
+    text-decoration: underline;
+
+  }
   .category {
     margin: 1rem;
     text-align: center;
