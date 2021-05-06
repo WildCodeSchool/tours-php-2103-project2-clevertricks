@@ -194,7 +194,11 @@
     border-radius: 10px;
     background-color: rgb(212, 193, 240);
     padding: 1rem;
-    color:rgba(2, 68, 90, 0.9)
+    color:rgba(2, 68, 90, 0.9);
+    margin-top: 80px;
+    margin-bottom: 200px;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 
   .flex-container {
