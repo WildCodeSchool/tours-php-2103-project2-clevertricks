@@ -77,8 +77,8 @@
 /*--------------------------------------------------------*/
 
   .teteOrdi {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
   }
 
   h1 {
@@ -242,6 +242,55 @@
   border: 3px solid #555;
   background-color: lightblue;
 }
-/*-----------boutons checkbox---------------------*/
 
 
+
+/*----------------formulaire-------------------*/
+
+
+#contenant input, textarea, button{
+  border-radius: 10px;
+  background-color: rgb(143, 214, 238);
+}
+
+#contenant input {
+  width: 100%;
+  margin: 2 rem;
+}
+
+#contenant textarea {
+  width: 100%;
+  margin-bottom: 5rem;
+}
+h4 {
+  color:#2a1549;
+  font-size: 1em;
+  text-align: left;
+}
+
+#box {
+  display: flex;
+  justify-content: space-around;
+  background-color: #349cd8;
+  border-radius: 10px;
+}
+
+.formulaire {
+  margin-top: 80px;
+  margin-bottom: 200px;
+  border-radius: 10px;
+  background-color: rgb(212, 193, 240);
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#buttonadd {
+  background-color: #349cd8;
+  border-radius: 10px;
+  color: white;
+}
+
+#buttonadd:hover {
+  color:black;
+}

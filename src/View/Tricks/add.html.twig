@@ -1,22 +1,32 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-<form method="post">
-    <label for="title">titre:</label>
-    <input type="text" id="title" name="title" class="tricksTitle"></input>
-    <label for="message">Decriver votre astuce:</label>
-    <textarea id="message" name="content" class="tricksContent"></textarea>
-    <button type="submit" value="Valider">Soumettre votre astuce</button>
+<section class="formulaire">
+    <form method="post">
+        <h4>Choisir la ou les catégories concernées</h4>
+        <section id="box">
+            {% for error in errors %}
+            <p>{{error}}</p>
+            {% endfor %}
+            {% for category in categories %}
+            <input type="checkbox" id="category{{category.id}}" name="category_id[]" value="{{category.id}}">
+            <label for="category{{category.id}}">{{category.name}}</label>
+            {% endfor %}
+        </section>
+        <section id="contenant">
+             <h4>
+                 <label for="title">Nom de votre astuce</label>
+            </h4>
+                 
+                <input type="text" id="title" name="title"></input>
 
-    <div class="check">
-        {% for error in errors %}
-        <p>{{error}}</p>
-        {% endfor %}
-        {% for category in categories %}
-        <input class="check-input" type="checkbox" id="category{{category.id}}" name="category_id[]" value="{{category.id}}">
-        <label class="check-label" for="category{{category.id}}">{{category.name}}</label>
-        {% endfor %}
-    </div>
-        
-</form>
+            <h4>
+                <label for="message">Explication de votre astuce</label>
+            </h4>
+
+                <textarea id="message" name="content" rows="12" cols="50"></textarea>
+                <button id="buttonadd" type="submit" value="Valider">Soumettre votre astuce</button>
+        </section>    
+    </form>
+</section>
 {% endblock %}
