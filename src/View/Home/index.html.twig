@@ -8,16 +8,16 @@
                 
                     {% for category in categories %}
                         
-                            <a class="button" href="/category/index/{{category.name}}" style="vertical-align:middle">
-                                <span>{{category.name}}</span>
-                            </a> 
+                            <a class="button" href="/category/index/{{category.name}}"><span>{{category.name}}</span></a>
                         
                     {% endfor %}
 
-                    
+                
         </section>
 
-                <a href="/tricks/add">Ajouter une astuce</a>
+        <div class="addTricksBlock">
+        <a class="addTricks" href="/tricks/add">Ajouter une astuce</a>
+        </div>
 
         <main class="flex-container">
 
@@ -36,7 +36,7 @@
                 <ul>
                     {% for trick in lastFiveTricks %}
                         <li> 
-                            {{loop.index}} : <a href="/tricks/show/{{trick.tricks_id}}">{{trick.title}}</a>  ==> <a href="/category/index/{{trick.name}}">{{trick.name}}</a> 
+                            {{loop.index}} : <a href="/tricks/show/{{trick.tricks_id}}">{{trick.title}}</a>  ==> <a class="lastFiveCategory" href="/category/index/{{trick.name}}">{{trick.name}}</a> 
                         </li>
                     {% endfor %}
                 </ul>

@@ -1,8 +1,10 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Astuce :  {{trick.title}}</h1>
+<div class="content">
+    <h3>Astuce :  {{trick.title}}</h3>
     <p>
         <pre>{{trick.content}}</pre>
     </p>
+</div>
 {% endblock %}
